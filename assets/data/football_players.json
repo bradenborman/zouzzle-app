@@ -1,0 +1,224 @@
+{
+  "players": [
+    {
+      "fullName": "Chase Daniel",
+      "sport": "football",
+      "position": "Quarterback",
+      "jerseyNumber": 10,
+      "startYear": 2005,
+      "endYear": 2009,
+      "wentPro": true,
+      "statisticalTier": "All-American"
+    },
+    {
+      "fullName": "Jeremy Maclin",
+      "sport": "football",
+      "position": "Wide Receiver",
+      "jerseyNumber": 9,
+      "startYear": 2007,
+      "endYear": 2009,
+      "wentPro": true,
+      "statisticalTier": "All-American"
+    },
+    {
+      "fullName": "Sean Weatherspoon",
+      "sport": "football",
+      "position": "Linebacker",
+      "jerseyNumber": 44,
+      "startYear": 2006,
+      "endYear": 2010,
+      "wentPro": true,
+      "statisticalTier": "All-American"
+    },
+    {
+      "fullName": "Aldon Smith",
+      "sport": "football",
+      "position": "Defensive End",
+      "jerseyNumber": 58,
+      "startYear": 2008,
+      "endYear": 2011,
+      "wentPro": true,
+      "statisticalTier": "All-American"
+    },
+    {
+      "fullName": "Justin Smith",
+      "sport": "football",
+      "position": "Defensive Tackle",
+      "jerseyNumber": 91,
+      "startYear": 1997,
+      "endYear": 2001,
+      "wentPro": true,
+      "statisticalTier": "All-American"
+    },
+    {
+      "fullName": "Brad Smith",
+      "sport": "football",
+      "position": "Quarterback",
+      "jerseyNumber": 16,
+      "startYear": 2002,
+      "endYear": 2006,
+      "wentPro": true,
+      "statisticalTier": "Starter"
+    },
+    {
+      "fullName": "L'Damian Washington",
+      "sport": "football",
+      "position": "Wide Receiver",
+      "jerseyNumber": 84,
+      "startYear": 2010,
+      "endYear": 2014,
+      "wentPro": true,
+      "statisticalTier": "Starter"
+    },
+    {
+      "fullName": "Sheldon Richardson",
+      "sport": "football",
+      "position": "Defensive Tackle",
+      "jerseyNumber": 9,
+      "startYear": 2009,
+      "endYear": 2013,
+      "wentPro": true,
+      "statisticalTier": "All-American"
+    },
+    {
+      "fullName": "T.J. Moe",
+      "sport": "football",
+      "position": "Wide Receiver",
+      "jerseyNumber": 80,
+      "startYear": 2008,
+      "endYear": 2012,
+      "wentPro": false,
+      "statisticalTier": "Starter"
+    },
+    {
+      "fullName": "Henry Josey",
+      "sport": "football",
+      "position": "Running Back",
+      "jerseyNumber": 21,
+      "startYear": 2010,
+      "endYear": 2014,
+      "wentPro": false,
+      "statisticalTier": "Starter"
+    },
+    {
+      "fullName": "Blaine Gabbert",
+      "sport": "football",
+      "position": "Quarterback",
+      "jerseyNumber": 11,
+      "startYear": 2008,
+      "endYear": 2011,
+      "wentPro": true,
+      "statisticalTier": "All-American"
+    },
+    {
+      "fullName": "Marcus Murphy",
+      "sport": "football",
+      "position": "Running Back",
+      "jerseyNumber": 6,
+      "startYear": 2011,
+      "endYear": 2015,
+      "wentPro": true,
+      "statisticalTier": "Role Player"
+    },
+    {
+      "fullName": "Kendall Blanton",
+      "sport": "football",
+      "position": "Tight End",
+      "jerseyNumber": 86,
+      "startYear": 2015,
+      "endYear": 2019,
+      "wentPro": true,
+      "statisticalTier": "Starter"
+    },
+    {
+      "fullName": "Drew Lock",
+      "sport": "football",
+      "position": "Quarterback",
+      "jerseyNumber": 3,
+      "startYear": 2015,
+      "endYear": 2019,
+      "wentPro": true,
+      "statisticalTier": "All-American"
+    },
+    {
+      "fullName": "Larry Rountree III",
+      "sport": "football",
+      "position": "Running Back",
+      "jerseyNumber": 34,
+      "startYear": 2017,
+      "endYear": 2021,
+      "wentPro": true,
+      "statisticalTier": "Starter"
+    },
+    {
+      "fullName": "Emanuel Hall",
+      "sport": "football",
+      "position": "Wide Receiver",
+      "jerseyNumber": 84,
+      "startYear": 2015,
+      "endYear": 2019,
+      "wentPro": true,
+      "statisticalTier": "Role Player"
+    },
+    {
+      "fullName": "Aarion Penton",
+      "sport": "football",
+      "position": "Cornerback",
+      "jerseyNumber": 1,
+      "startYear": 2013,
+      "endYear": 2017,
+      "wentPro": false,
+      "statisticalTier": "Starter"
+    },
+    {
+      "fullName": "Kentrell Brothers",
+      "sport": "football",
+      "position": "Linebacker",
+      "jerseyNumber": 10,
+      "startYear": 2012,
+      "endYear": 2016,
+      "wentPro": true,
+      "statisticalTier": "Starter"
+    },
+    {
+      "fullName": "Charles Harris",
+      "sport": "football",
+      "position": "Defensive End",
+      "jerseyNumber": 53,
+      "startYear": 2013,
+      "endYear": 2017,
+      "wentPro": true,
+      "statisticalTier": "Starter"
+    },
+    {
+      "fullName": "Gabe DeArmond",
+      "sport": "football",
+      "position": "Tight End",
+      "jerseyNumber": 87,
+      "startYear": 2000,
+      "endYear": 2004,
+      "wentPro": false,
+      "statisticalTier": "Role Player"
+    },
+    {
+      "fullName": "James Franklin",
+      "sport": "football",
+      "position": "Quarterback",
+      "jerseyNumber": 1,
+      "startYear": 2011,
+      "endYear": 2014,
+      "wentPro": false,
+      "statisticalTier": "Starter"
+    },
+    {
+      "fullName": "Marcus Loud",
+      "sport": "football",
+      "position": "Wide Receiver",
+      "jerseyNumber": 15,
+      "startYear": 2009,
+      "endYear": 2013,
+      "wentPro": false,
+      "statisticalTier": "Role Player"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PlayerDataset",
+  "type": "object",
+  "required": [
+    "players"
+  ],
+  "properties": {
+    "players": {
+      "type": "array",
+      "minItems": 20,
+      "items": {
+        "type": "object",
+        "required": [
+          "fullName",
+          "sport",
+          "position",
+          "jerseyNumber",
+          "startYear",
+          "endYear",
+          "wentPro",
+          "statisticalTier"
+        ],
+        "properties": {
+          "fullName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sport": {
+            "type": "string",
+            "enum": [
+              "basketball",
+              "football"
+            ]
+          },
+          "position": {
+            "type": "string",
+            "minLength": 1
+          },
+          "jerseyNumber": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 99
+          },
+          "startYear": {
+            "type": "integer",
+            "minimum": 1900
+          },
+          "endYear": {
+            "type": "integer",
+            "minimum": 1900
+          },
+          "wentPro": {
+            "type": "boolean"
+          },
+          "statisticalTier": {
+            "type": "string",
+            "enum": [
+              "All-American",
+              "Starter",
+              "Role Player",
+              "Walk-On"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

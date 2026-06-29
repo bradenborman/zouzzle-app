@@ -1,0 +1,26 @@
+Missouri Tigers Primary Logo Colors
+
+The primary colors of the Missouri Tigers can be found in the table below.
+
+BLACK
+PANTONE: PROCESS BLACK
+HEX COLOR: #000000;
+RGB: (0,0,0)
+BUY MATCHING PAINT
+GOLD
+PANTONE: PMS 124
+HEX COLOR: #F1B82D;
+RGB: (241,184,45)
+CMYK: (0,25,90,5)
+BUY MATCHING PAINT
+
+
+
+echo "# zouzzle-app" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/bradenborman/zouzzle-app.git
+git push -u origin main
+
