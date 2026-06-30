@@ -37,4 +37,4 @@ If we update this policy, we will post the changes here with a new "Last Updated
 
 ## Contact
 
-For questions about this privacy policy, contact: bradenborman@gmail.com
+For questions about this privacy policy, contact: bradenborman@hotmail.com
