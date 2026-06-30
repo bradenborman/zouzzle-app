@@ -112,7 +112,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  'Guess the Mizzou player',
+                  'Guess the player',
                   style: TextStyle(color: Colors.white54, fontSize: 14),
                 ),
                 const Spacer(),
@@ -124,13 +124,14 @@ class HomeScreen extends StatelessWidget {
                       iconPath: 'assets/images/basketball-icon.png',
                       onTap: () => _showDifficultyPicker(context),
                     ),
-                    const SizedBox(width: 24),
-                    _SportTile(
-                      label: 'Football',
-                      iconPath: 'assets/images/football-icon.png',
-                      enabled: false,
-                      onTap: () {},
-                    ),
+                    // TODO: Uncomment when football is ready
+                    // const SizedBox(width: 24),
+                    // _SportTile(
+                    //   label: 'Football',
+                    //   iconPath: 'assets/images/football-icon.png',
+                    //   enabled: false,
+                    //   onTap: () {},
+                    // ),
                   ],
                 ),
                 const Spacer(),

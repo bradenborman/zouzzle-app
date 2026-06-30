@@ -20,7 +20,7 @@ class HowToPlayScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Guess the Mizzou Player!',
+              'Guess the Player!',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,

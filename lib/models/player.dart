@@ -21,7 +21,7 @@ class Player {
   @JsonKey(toJson: _tierToJson, fromJson: _tierFromJson)
   final StatisticalTier statisticalTier;
 
-  // Career stats (per-game averages at Missouri)
+  // Career stats (per-game averages)
   final double points;
   final double rebounds;
   final double assists;

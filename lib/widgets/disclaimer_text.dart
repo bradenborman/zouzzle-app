@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../core/app_theme.dart';
 
 /// A disclaimer widget displayed on the Home Screen clarifying that Zouzzle
-/// has no official affiliation with the University of Missouri.
+/// is an independent fan-made game.
 ///
 /// Renders white text on the app's black background, providing a 21:1 contrast
 /// ratio that exceeds the WCAG AA minimum of 4.5:1 for normal text.
@@ -10,8 +10,8 @@ class DisclaimerText extends StatelessWidget {
   const DisclaimerText({super.key});
 
   static const _disclaimerMessage =
-      'Zouzzle is not affiliated with, endorsed by, or sponsored by '
-      'the University of Missouri or its athletic programs.';
+      'Zouzzle is an independent fan-made game and is not affiliated with, '
+      'endorsed by, or sponsored by any university or athletic program.';
 
   @override
   Widget build(BuildContext context) {

@@ -81,7 +81,7 @@ FeedbackRow evaluateGuess(Player guessed, Player mystery) {
   final inches = guessed.height % 12;
   final heightDisplay = "$ft'$inches\"";
 
-  // 3. Teammates — did their years at Mizzou overlap?
+  // 3. Teammates — did their years overlap?
   final bool wereTeammates =
       guessed.startYear <= mystery.endYear && guessed.endYear >= mystery.startYear;
   final teammatesState = wereTeammates ? MatchState.exact : MatchState.miss;
