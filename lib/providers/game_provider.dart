@@ -103,7 +103,7 @@ class GameNotifier extends StateNotifier<GameState> {
     }
 
     final mystery = state.mysteryPlayer!;
-    final feedbackRow = evaluateGuess(guessedPlayer, mystery);
+    final feedbackRow = evaluateGuess(guessedPlayer, mystery, difficulty: _difficulty);
     final updatedGuesses = [...state.guesses, feedbackRow];
     final updatedRemaining = state.remainingGuesses - 1;
 

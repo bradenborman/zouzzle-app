@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import '../models/enums.dart';
 import '../models/feedback_row.dart';
 import '../models/player.dart';
+import '../providers/game_provider.dart';
 
 /// Compare a single numeric attribute against the mystery player's value.
 MatchState compareNumeric(int guessed, int mystery, int tolerance) {
@@ -55,10 +58,46 @@ double _getStatValue(Player player, StatCategory cat) {
   }
 }
 
+/// Picks a random stat with points weighted at 50% probability.
+StatCategory _pickWeightedStat() {
+  final rand = Random();
+  final roll = rand.nextInt(100);
+  if (roll < 50) return StatCategory.points;        // 50%
+  if (roll < 70) return StatCategory.rebounds;      // 20%
+  if (roll < 85) return StatCategory.assists;       // 15%
+  return StatCategory.steals;                        // 15%
+}
+
+/// Build a stat AttributeResult for a given category.
+AttributeResult _buildStatResult(Player guessed, Player mystery) {
+  final statCat = _pickWeightedStat();
+  final guessedStat = _getStatValue(guessed, statCat);
+  final mysteryStat = _getStatValue(mystery, statCat);
+  final MatchState statState;
+  final ArrowDirection? statArrow;
+  if (guessedStat == mysteryStat) {
+    statState = MatchState.exact;
+    statArrow = null;
+  } else {
+    statState = MatchState.miss;
+    statArrow = mysteryStat > guessedStat
+        ? ArrowDirection.up
+        : ArrowDirection.down;
+  }
+  return AttributeResult(
+    attributeLabel: 'Stat',
+    state: statState,
+    arrow: statArrow,
+    displayValue: '${statCategoryLabel(statCat)} $guessedStat',
+  );
+}
+
 /// Produce a complete [FeedbackRow] for a guess against a mystery player.
 ///
-/// Columns: Position, Jersey, Teammates, daily Stat
-FeedbackRow evaluateGuess(Player guessed, Player mystery) {
+/// Columns vary by difficulty:
+/// - Recent mode: Pos, Height, Stat, Stat (two stat columns, no years)
+/// - All other modes: Pos, Height, Years, Stat
+FeedbackRow evaluateGuess(Player guessed, Player mystery, {Difficulty? difficulty}) {
 
   // 1. Position — categorical match
   final positionState = compareCategorical(guessed.position, mystery.position);
@@ -76,71 +115,57 @@ FeedbackRow evaluateGuess(Player guessed, Player mystery) {
         ? ArrowDirection.up
         : ArrowDirection.down;
   }
-  // Format height as feet'inches"
   final ft = guessed.height ~/ 12;
   final inches = guessed.height % 12;
   final heightDisplay = "$ft'$inches\"";
 
-  // 3. Teammates — did their years overlap?
-  final bool wereTeammates =
-      guessed.startYear <= mystery.endYear && guessed.endYear >= mystery.startYear;
-  final teammatesState = wereTeammates ? MatchState.exact : MatchState.miss;
-  final yearsDisplay = "'${(guessed.startYear % 100).toString().padLeft(2, '0')}-'${(guessed.endYear % 100).toString().padLeft(2, '0')}";
+  // Build results based on difficulty
+  final results = <AttributeResult>[
+    AttributeResult(
+      attributeLabel: 'Pos',
+      state: positionState,
+      displayValue: guessed.position,
+    ),
+    AttributeResult(
+      attributeLabel: 'Height',
+      state: heightState,
+      arrow: heightArrow,
+      displayValue: heightDisplay,
+    ),
+  ];
 
-  // Arrow for years: if no overlap, point toward the mystery player's era
-  final ArrowDirection? yearsArrow;
-  if (wereTeammates) {
-    yearsArrow = null;
-  } else if (mystery.startYear > guessed.endYear) {
-    // Mystery player is more recent
-    yearsArrow = ArrowDirection.up;
+  if (difficulty == Difficulty.recent) {
+    // Recent mode: two stat columns instead of years
+    results.add(_buildStatResult(guessed, mystery));
+    results.add(_buildStatResult(guessed, mystery));
   } else {
-    // Mystery player is older
-    yearsArrow = ArrowDirection.down;
-  }
+    // All other modes: years + one stat
+    // 3. Years — did their years overlap?
+    final bool wereTeammates =
+        guessed.startYear <= mystery.endYear && guessed.endYear >= mystery.startYear;
+    final teammatesState = wereTeammates ? MatchState.exact : MatchState.miss;
+    final yearsDisplay = "'${(guessed.startYear % 100).toString().padLeft(2, '0')}-'${(guessed.endYear % 100).toString().padLeft(2, '0')}";
 
-  // 4. Random stat — picks a random category each guess
-  final statCat = StatCategory.values[DateTime.now().microsecond % StatCategory.values.length];
-  final guessedStat = _getStatValue(guessed, statCat);
-  final mysteryStat = _getStatValue(mystery, statCat);
-  final MatchState statState;
-  final ArrowDirection? statArrow;
-  if (guessedStat == mysteryStat) {
-    statState = MatchState.exact;
-    statArrow = null;
-  } else {
-    statState = MatchState.miss;
-    statArrow = mysteryStat > guessedStat
-        ? ArrowDirection.up
-        : ArrowDirection.down;
+    final ArrowDirection? yearsArrow;
+    if (wereTeammates) {
+      yearsArrow = null;
+    } else if (mystery.startYear > guessed.endYear) {
+      yearsArrow = ArrowDirection.up;
+    } else {
+      yearsArrow = ArrowDirection.down;
+    }
+
+    results.add(AttributeResult(
+      attributeLabel: 'Years',
+      state: teammatesState,
+      arrow: yearsArrow,
+      displayValue: yearsDisplay,
+    ));
+    results.add(_buildStatResult(guessed, mystery));
   }
 
   return FeedbackRow(
     guessedPlayer: guessed,
-    results: [
-      AttributeResult(
-        attributeLabel: 'Pos',
-        state: positionState,
-        displayValue: guessed.position,
-      ),
-      AttributeResult(
-        attributeLabel: 'Height',
-        state: heightState,
-        arrow: heightArrow,
-        displayValue: heightDisplay,
-      ),
-      AttributeResult(
-        attributeLabel: 'Years',
-        state: teammatesState,
-        arrow: yearsArrow,
-        displayValue: yearsDisplay,
-      ),
-      AttributeResult(
-        attributeLabel: 'Stat',
-        state: statState,
-        arrow: statArrow,
-        displayValue: '${statCategoryLabel(statCat)} $guessedStat',
-      ),
-    ],
+    results: results,
   );
 }
