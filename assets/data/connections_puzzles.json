@@ -1,0 +1,52 @@
+{
+  "puzzles": [
+    {
+      "id": 1,
+      "groups": [
+{
+  "category": "Mizzou Basketball Legends (Chievous • Booker • Denmon • Clarkson)",
+  "color": "yellow",
+  "items": ["23", "1", "22", "5"]
+},       {"category": "Networks/Stations That Have Aired Mizzou Games", "color": "green", "items": ["ESPN", "CBS", "SEC Network", "17"]},
+        {"category": "Football Head Coaches", "color": "blue", "items": ["Pinkel", "Drinkwitz", "Powers", "Stull"]},
+        {"category": "Campus Landmarks", "color": "purple", "items": ["Columns", "Jesse", "Francis", "Memorial"]}
+      ]
+    },
+    {
+      "id": 2,
+      "groups": [
+        {"category": "Columbia Streets", "color": "yellow", "items": ["Providence", "Broadway", "Stadium", "College"]},
+        {"category": "Residence Halls", "color": "green", "items": ["Hudson", "Schurz", "Wolpers", "Gateway"]},
+        {"category": "Former Basketball Coaches", "color": "blue", "items": ["Anderson", "Haith", "Gates", "Norm"]},
+        {"category": "SEC Opponents", "color": "purple", "items": ["Georgia", "Florida", "Arkansas", "Kentucky"]}
+      ]
+    },
+    {
+      "id": 3,
+      "groups": [
+        {"category": "Favorite Columbia Restaurants", "color": "yellow", "items": ["Booches", "Shakespeare's", "Addison's", "Flat Branch"]},
+        {"category": "Football Traditions", "color": "green", "items": ["Tiger Walk", "M-I-Z", "Roughneck", "Mr. Brightside"]},
+        {"category": "NFL Tigers", "color": "blue", "items": ["Maclin", "Smith", "Josey", "Golden"]},
+        {"category": "One-Word Campus Buildings", "color": "purple", "items": ["Laws", "Ellis", "Middlebush", "Cornell"]}
+      ]
+    },
+    {
+      "id": 4,
+      "groups": [
+        {"category": "Famous Mizzou Alumni", "color": "yellow", "items": ["Kroenke", "Naismith", "Rudd", "Lauer"]},
+        {"category": "Campus Traditions", "color": "green", "items": ["Homecoming", "Tiger Walk", "Tap Day", "M-I-Z"]},
+        {"category": "Basketball Arenas/Opponent Venues", "color": "blue", "items": ["Mizzou Arena", "Rupp", "Bud Walton", "Thompson-Boling"]},
+        {"category": "Columbia Roads", "color": "purple", "items": ["Providence", "Grindstone", "Forum", "Stadium"]}
+      ]
+    },
+    {
+      "id": 5,
+      "groups": [
+        {"category": "Current SEC Schools", "color": "yellow", "items": ["Auburn", "Alabama", "Vanderbilt", "Tennessee"]},
+        {"category": "Football Venues Mizzou Plays In", "color": "green", "items": ["Faurot", "Arrowhead", "Cotton", "Liberty"]},
+        {"category": "Current Mizzou Coaches", "color": "blue", "items": ["Drinkwitz", "Gates", "Pingeton", "Smith"]},
+        {"category": "TV Networks", "color": "purple", "items": ["ESPN", "ABC", "CBS", "SEC Network"]}
+      ]
+    }
+  ]
+}

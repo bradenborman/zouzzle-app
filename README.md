@@ -1,5 +1,11 @@
 # Zouzzle
 
-Guess the Mizzou basketball player. A daily sports trivia game.
+A basketball player guessing game built with Flutter.
 
-Built with Flutter/Dart for iOS.
+## Privacy
+
+Zouzzle collects no data. See [Privacy Policy](https://bradenborman.github.io/zouzzle-app/).
+
+## Support
+
+Contact: bradenborman@hotmail.com

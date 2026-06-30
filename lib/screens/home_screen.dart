@@ -78,6 +78,27 @@ class HomeScreen extends StatelessWidget {
                 context.go('/game/basketball/recent');
               },
             ),
+            const SizedBox(height: 20),
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(ctx);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const HowToPlayScreen()),
+                );
+              },
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.help_outline, color: Colors.white38, size: 16),
+                  SizedBox(width: 6),
+                  Text(
+                    'How to Play',
+                    style: TextStyle(color: Colors.white38, fontSize: 13),
+                  ),
+                ],
+              ),
+            ),
             const SizedBox(height: 16),
           ],
         ),
@@ -112,10 +133,21 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  'Guess the player',
+                  'Tiger Trivia',
                   style: TextStyle(color: Colors.white54, fontSize: 14),
                 ),
                 const Spacer(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _SportTile(
+                      label: 'Connections',
+                      customIcon: _ConnectionsIcon(),
+                      onTap: () => context.go('/connections'),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -124,26 +156,16 @@ class HomeScreen extends StatelessWidget {
                       iconPath: 'assets/images/basketball-icon.png',
                       onTap: () => _showDifficultyPicker(context),
                     ),
-                    // TODO: Uncomment when football is ready
-                    // const SizedBox(width: 24),
-                    // _SportTile(
-                    //   label: 'Football',
-                    //   iconPath: 'assets/images/football-icon.png',
-                    //   enabled: false,
-                    //   onTap: () {},
-                    // ),
+                    const SizedBox(width: 24),
+                    _SportTile(
+                      label: 'Football',
+                      iconPath: 'assets/images/football-icon.png',
+                      enabled: false,
+                      onTap: () {},
+                    ),
                   ],
                 ),
                 const Spacer(),
-                IconButton(
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const HowToPlayScreen()),
-                  ),
-                  icon: const Icon(Icons.help_outline, color: Colors.white38),
-                  tooltip: 'How to Play',
-                ),
-                const SizedBox(height: 8),
                 const DisclaimerText(),
               ],
             ),
@@ -157,13 +179,15 @@ class HomeScreen extends StatelessWidget {
 class _SportTile extends StatelessWidget {
   const _SportTile({
     required this.label,
-    required this.iconPath,
+    this.iconPath,
+    this.customIcon,
     required this.onTap,
     this.enabled = true,
   });
 
   final String label;
-  final String iconPath;
+  final String? iconPath;
+  final Widget? customIcon;
   final VoidCallback onTap;
   final bool enabled;
 
@@ -187,7 +211,10 @@ class _SportTile extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(iconPath, width: 60, height: 60),
+              if (iconPath != null)
+                Image.asset(iconPath!, width: 60, height: 60),
+              if (customIcon != null)
+                customIcon!,
               const SizedBox(height: 8),
               Text(
                 label,
@@ -252,6 +279,43 @@ class _DifficultyOption extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _ConnectionsIcon extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 56,
+      height: 56,
+      child: GridView.count(
+        crossAxisCount: 2,
+        mainAxisSpacing: 6,
+        crossAxisSpacing: 6,
+        physics: const NeverScrollableScrollPhysics(),
+        children: const [
+          _Dot(Color(0xFFF9DF6D)), // yellow
+          _Dot(Color(0xFFA0C35A)), // green
+          _Dot(Color(0xFFB0C4EF)), // blue
+          _Dot(Color(0xFFBA81C5)), // purple
+        ],
+      ),
+    );
+  }
+}
+
+class _Dot extends StatelessWidget {
+  const _Dot(this.color);
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(6),
       ),
     );
   }

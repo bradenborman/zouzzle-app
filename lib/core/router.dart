@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:zouzzle/models/enums.dart';
 import 'package:zouzzle/providers/game_provider.dart';
+import 'package:zouzzle/screens/connections_screen.dart';
 import 'package:zouzzle/screens/game_screen.dart';
 import 'package:zouzzle/screens/home_screen.dart';
 import 'package:zouzzle/screens/result_screen.dart';
@@ -27,6 +28,10 @@ final router = GoRouter(
     GoRoute(
       path: '/',
       builder: (ctx, state) => const HomeScreen(),
+    ),
+    GoRoute(
+      path: '/connections',
+      builder: (ctx, state) => const ConnectionsScreen(),
     ),
     GoRoute(
       path: '/game/:sport/:difficulty',
