@@ -2,7 +2,7 @@
   "players": [
     {
       "fullName": "Jayden Stone",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 180,
@@ -44,7 +44,7 @@
     },
     {
       "fullName": "Sebastian Mack",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 200,
@@ -149,7 +149,7 @@
     },
     {
       "fullName": "Aaron Rowe",
-      "position": "G",
+      "position": "PG",
       "height": 74,
       "height_str": "6-2",
       "weight": 155,
@@ -191,7 +191,7 @@
     },
     {
       "fullName": "Tony Perkins",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 210,
@@ -212,7 +212,7 @@
     },
     {
       "fullName": "Marques Warrick",
-      "position": "G",
+      "position": "PG",
       "height": 74,
       "height_str": "6-2",
       "weight": 170,
@@ -233,7 +233,7 @@
     },
     {
       "fullName": "Jacob Crews",
-      "position": "G",
+      "position": "SG",
       "height": 79,
       "height_str": "6-7",
       "weight": 210,
@@ -276,7 +276,7 @@
     },
     {
       "fullName": "Marcus Allen",
-      "position": "G",
+      "position": "SG",
       "height": 79,
       "height_str": "6-7",
       "weight": 220,
@@ -297,7 +297,7 @@
     },
     {
       "fullName": "T.O. Barrett",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 200,
@@ -319,7 +319,7 @@
     },
     {
       "fullName": "Annor Boateng",
-      "position": "G",
+      "position": "SG",
       "height": 78,
       "height_str": "6-6",
       "weight": 215,
@@ -362,7 +362,7 @@
     },
     {
       "fullName": "Jeremy Sanchez",
-      "position": "G",
+      "position": "PG",
       "height": 72,
       "height_str": "6-0",
       "weight": 180,
@@ -383,7 +383,7 @@
     },
     {
       "fullName": "JV Brown",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 195,
@@ -403,7 +403,7 @@
     },
     {
       "fullName": "Tamar Bates",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 193,
@@ -425,7 +425,7 @@
     },
     {
       "fullName": "Anthony Robinson",
-      "position": "G",
+      "position": "PG",
       "height": 74,
       "height_str": "6-2",
       "weight": 175,
@@ -469,7 +469,7 @@
     },
     {
       "fullName": "Caleb Grill",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 195,
@@ -533,7 +533,7 @@
     },
     {
       "fullName": "Curt Lewis",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 220,
@@ -577,7 +577,7 @@
     },
     {
       "fullName": "John Tonje",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 222,
@@ -598,7 +598,7 @@
     },
     {
       "fullName": "D'Moi Hodge",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 180,
@@ -619,7 +619,7 @@
     },
     {
       "fullName": "DeAndre Gholston",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 215,
@@ -662,7 +662,7 @@
     },
     {
       "fullName": "Nick Honor",
-      "position": "G",
+      "position": "PG",
       "height": 70,
       "height_str": "5-10",
       "weight": 205,
@@ -684,7 +684,7 @@
     },
     {
       "fullName": "Sean East",
-      "position": "G",
+      "position": "PG",
       "height": 75,
       "height_str": "6-3",
       "weight": 175,
@@ -727,7 +727,7 @@
     },
     {
       "fullName": "Tre Gomillion",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 215,
@@ -792,7 +792,7 @@
     },
     {
       "fullName": "Ben Sternberg",
-      "position": "G",
+      "position": "PG",
       "height": 72,
       "height_str": "6-0",
       "weight": 152,
@@ -835,7 +835,7 @@
     },
     {
       "fullName": "Jackson Francois",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 155,
@@ -856,7 +856,7 @@
     },
     {
       "fullName": "Amari Davis",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 170,
@@ -899,7 +899,7 @@
     },
     {
       "fullName": "Jarron Coleman",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 205,
@@ -920,7 +920,7 @@
     },
     {
       "fullName": "Dajuan Gordon",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 190,
@@ -983,7 +983,7 @@
     },
     {
       "fullName": "Anton Brookshire",
-      "position": "G",
+      "position": "PG",
       "height": 73,
       "height_str": "6-1",
       "weight": 170,
@@ -1025,7 +1025,7 @@
     },
     {
       "fullName": "Kaleb Brown",
-      "position": "G",
+      "position": "SG",
       "height": 78,
       "height_str": "6-6",
       "weight": 265,
@@ -1048,7 +1048,7 @@
     },
     {
       "fullName": "Drew Buggs",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 195,
@@ -1091,7 +1091,7 @@
     },
     {
       "fullName": "Dru Smith",
-      "position": "G",
+      "position": "PG",
       "height": 75,
       "height_str": "6-3",
       "weight": 203,
@@ -1180,7 +1180,7 @@
     },
     {
       "fullName": "Mario McKinney",
-      "position": "G",
+      "position": "SG",
       "height": 74,
       "height_str": "6-2",
       "weight": 185,
@@ -1221,7 +1221,7 @@
     },
     {
       "fullName": "Javon Pickett",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 220,
@@ -1245,7 +1245,7 @@
     },
     {
       "fullName": "Torrence Watson",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 205,
@@ -1268,7 +1268,7 @@
     },
     {
       "fullName": "Mark Smith",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 220,
@@ -1291,7 +1291,7 @@
     },
     {
       "fullName": "Xavier Pinson",
-      "position": "G",
+      "position": "PG",
       "height": 74,
       "height_str": "6-2",
       "weight": 170,
@@ -1314,7 +1314,7 @@
     },
     {
       "fullName": "Ronnie Suggs",
-      "position": "G",
+      "position": "SG",
       "height": 78,
       "height_str": "6-6",
       "weight": 205,
@@ -1356,7 +1356,7 @@
     },
     {
       "fullName": "Brooks Ford",
-      "position": "G",
+      "position": "PG",
       "height": 72,
       "height_str": "6-0",
       "weight": 187,
@@ -1378,7 +1378,7 @@
     },
     {
       "fullName": "Christian Guess",
-      "position": "G",
+      "position": "SG",
       "height": 78,
       "height_str": "6-6",
       "weight": 190,
@@ -1398,7 +1398,7 @@
     },
     {
       "fullName": "Evan Yerkes",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 187,
@@ -1420,7 +1420,7 @@
     },
     {
       "fullName": "Kassius Robertson",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 169,
@@ -1486,7 +1486,7 @@
     },
     {
       "fullName": "Blake Harris",
-      "position": "G",
+      "position": "PG",
       "height": 75,
       "height_str": "6-3",
       "weight": 190,
@@ -1550,7 +1550,7 @@
     },
     {
       "fullName": "Frankie Hughes",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 195,
@@ -1571,7 +1571,7 @@
     },
     {
       "fullName": "Jordan Geist",
-      "position": "G",
+      "position": "PG",
       "height": 74,
       "height_str": "6-2",
       "weight": 180,
@@ -1663,7 +1663,7 @@
     },
     {
       "fullName": "Trevor Glassman",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 200,
@@ -1750,7 +1750,7 @@
     },
     {
       "fullName": "Terrence Phillips",
-      "position": "G",
+      "position": "PG",
       "height": 71,
       "height_str": "5-11",
       "weight": 170,
@@ -1773,7 +1773,7 @@
     },
     {
       "fullName": "K.J. Walton",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 200,
@@ -1795,7 +1795,7 @@
     },
     {
       "fullName": "Cullen VanLeer",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 208,
@@ -1864,7 +1864,7 @@
     },
     {
       "fullName": "Jimmy Barton",
-      "position": "G",
+      "position": "PG",
       "height": 69,
       "height_str": "5-9",
       "weight": 160,
@@ -1885,7 +1885,7 @@
     },
     {
       "fullName": "Keith Shamburger",
-      "position": "G",
+      "position": "PG",
       "height": 71,
       "height_str": "5-11",
       "weight": 170,
@@ -1906,7 +1906,7 @@
     },
     {
       "fullName": "Montaque Gill-Caesar",
-      "position": "G",
+      "position": "SG",
       "height": 78,
       "height_str": "6-6",
       "weight": 215,
@@ -1927,7 +1927,7 @@
     },
     {
       "fullName": "Namon Wright",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 197,
@@ -1971,7 +1971,7 @@
     },
     {
       "fullName": "Tramaine Isabell",
-      "position": "G",
+      "position": "PG",
       "height": 73,
       "height_str": "6-1",
       "weight": 180,
@@ -2015,7 +2015,7 @@
     },
     {
       "fullName": "Deuce Bello",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 198,
@@ -2056,7 +2056,7 @@
     },
     {
       "fullName": "Jordan Clarkson",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 193,
@@ -2099,7 +2099,7 @@
     },
     {
       "fullName": "Wes Clark",
-      "position": "G",
+      "position": "PG",
       "height": 72,
       "height_str": "6-0",
       "weight": 185,
@@ -2164,7 +2164,7 @@
     },
     {
       "fullName": "Shane Rector",
-      "position": "G",
+      "position": "PG",
       "height": 73,
       "height_str": "6-1",
       "weight": 171,
@@ -2206,7 +2206,7 @@
     },
     {
       "fullName": "Earnest Ross",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 228,
@@ -2228,7 +2228,7 @@
     },
     {
       "fullName": "Keion Bell",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 200,
@@ -2249,7 +2249,7 @@
     },
     {
       "fullName": "Jabari Brown",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 214,
@@ -2293,7 +2293,7 @@
     },
     {
       "fullName": "Negus Webster-Chan",
-      "position": "G",
+      "position": "SG",
       "height": 79,
       "height_str": "6-7",
       "weight": 205,
@@ -2382,7 +2382,7 @@
     },
     {
       "fullName": "Corey Haith",
-      "position": "G",
+      "position": "PG",
       "height": 71,
       "height_str": "5-11",
       "weight": 175,
@@ -2404,7 +2404,7 @@
     },
     {
       "fullName": "Dominique Bull",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 200,
@@ -2510,7 +2510,7 @@
     },
     {
       "fullName": "Phil Pressey",
-      "position": "G",
+      "position": "PG",
       "height": 71,
       "height_str": "5-11",
       "weight": 175,
@@ -2533,7 +2533,7 @@
     },
     {
       "fullName": "Matt Pressey",
-      "position": "G",
+      "position": "PG",
       "height": 74,
       "height_str": "6-2",
       "weight": 195,
@@ -2555,7 +2555,7 @@
     },
     {
       "fullName": "Rick Kreklow",
-      "position": "G",
+      "position": "SG",
       "height": 79,
       "height_str": "6-7",
       "weight": 195,
@@ -2575,7 +2575,7 @@
     },
     {
       "fullName": "Michael Dixon",
-      "position": "G",
+      "position": "PG",
       "height": 73,
       "height_str": "6-1",
       "weight": 200,
@@ -2641,7 +2641,7 @@
     },
     {
       "fullName": "Zaire Taylor",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 189,
@@ -2663,7 +2663,7 @@
     },
     {
       "fullName": "Kim English",
-      "position": "G",
+      "position": "SG",
       "height": 78,
       "height_str": "6-6",
       "weight": 200,
@@ -2687,7 +2687,7 @@
     },
     {
       "fullName": "Marcus Denmon",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 185,
@@ -2733,7 +2733,7 @@
     },
     {
       "fullName": "Miguel Paul",
-      "position": "G",
+      "position": "PG",
       "height": 73,
       "height_str": "6-1",
       "weight": 180,
@@ -2779,7 +2779,7 @@
     },
     {
       "fullName": "Jarrett Sutton",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 196,
@@ -2873,7 +2873,7 @@
     },
     {
       "fullName": "Stefhon Hannah",
-      "position": "G",
+      "position": "PG",
       "height": 73,
       "height_str": "6-1",
       "weight": 183,
@@ -2895,7 +2895,7 @@
     },
     {
       "fullName": "Keon Lawrence",
-      "position": "G",
+      "position": "PG",
       "height": 74,
       "height_str": "6-2",
       "weight": 177,
@@ -2939,7 +2939,7 @@
     },
     {
       "fullName": "J.T. Tiller",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 200,
@@ -2985,7 +2985,7 @@
     },
     {
       "fullName": "Nick Berardini",
-      "position": "G",
+      "position": "PG",
       "height": 72,
       "height_str": "6-0",
       "weight": 190,
@@ -3031,7 +3031,7 @@
     },
     {
       "fullName": "Marcus Watkins",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 200,
@@ -3053,7 +3053,7 @@
     },
     {
       "fullName": "Matt Lawrence",
-      "position": "G",
+      "position": "SG",
       "height": 79,
       "height_str": "6-7",
       "weight": 203,
@@ -3077,7 +3077,7 @@
     },
     {
       "fullName": "James Douglas",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 190,
@@ -3098,7 +3098,7 @@
     },
     {
       "fullName": "Jason Horton",
-      "position": "G",
+      "position": "PG",
       "height": 73,
       "height_str": "6-1",
       "weight": 190,
@@ -3192,7 +3192,7 @@
     },
     {
       "fullName": "Jason Conley",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 212,
@@ -3236,7 +3236,7 @@
     },
     {
       "fullName": "Thomas Gardner",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "6-5",
       "weight": 225,
@@ -3259,7 +3259,7 @@
     },
     {
       "fullName": "Randy Pulley",
-      "position": "G",
+      "position": "PG",
       "height": 74,
       "height_str": "6-2",
       "weight": 213,
@@ -3280,7 +3280,7 @@
     },
     {
       "fullName": "Spencer Laurie",
-      "position": "G",
+      "position": "PG",
       "height": 73,
       "height_str": "6-1",
       "weight": 182,
@@ -3302,7 +3302,7 @@
     },
     {
       "fullName": "Brian Dailey",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 200,
@@ -3324,7 +3324,7 @@
     },
     {
       "fullName": "Ricky Clemons",
-      "position": "G",
+      "position": "PG",
       "height": 71,
       "height_str": "5-11",
       "weight": 172,
@@ -3345,7 +3345,7 @@
     },
     {
       "fullName": "Jimmy McKinney",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 212,
@@ -3393,7 +3393,7 @@
     },
     {
       "fullName": "Rob Stewart",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "",
       "weight": 0,
@@ -3459,7 +3459,7 @@
     },
     {
       "fullName": "Duane John",
-      "position": "G",
+      "position": "SG",
       "height": 78,
       "height_str": "6-6",
       "weight": 195,
@@ -3480,7 +3480,7 @@
     },
     {
       "fullName": "Jake Jackson",
-      "position": "G",
+      "position": "PG",
       "height": 74,
       "height_str": "6-2",
       "weight": 193,
@@ -3550,7 +3550,7 @@
     },
     {
       "fullName": "Wesley Stokes",
-      "position": "G",
+      "position": "PG",
       "height": 72,
       "height_str": "6-0",
       "weight": 166,
@@ -3596,7 +3596,7 @@
     },
     {
       "fullName": "Michael Griffin",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "6-3",
       "weight": 180,
@@ -3617,7 +3617,7 @@
     },
     {
       "fullName": "Ryan Kiernan",
-      "position": "G",
+      "position": "PG",
       "height": 72,
       "height_str": "6-0",
       "weight": 186,
@@ -3640,7 +3640,7 @@
     },
     {
       "fullName": "Keyon Dooling",
-      "position": "G",
+      "position": "PG",
       "height": 75,
       "height_str": "19 (1998)",
       "weight": 0,
@@ -3661,7 +3661,7 @@
     },
     {
       "fullName": "Clarence Gilbert",
-      "position": "G",
+      "position": "PG",
       "height": 74,
       "height_str": "6-2",
       "weight": 194,
@@ -3707,7 +3707,7 @@
     },
     {
       "fullName": "Tajudeen Soyoye",
-      "position": "G",
+      "position": "F",
       "height": 81,
       "height_str": "",
       "weight": 0,
@@ -3729,7 +3729,7 @@
     },
     {
       "fullName": "Brian Grawer",
-      "position": "G",
+      "position": "PG",
       "height": 72,
       "height_str": "",
       "weight": 0,
@@ -3751,7 +3751,7 @@
     },
     {
       "fullName": "Jeff Hafer",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "",
       "weight": 0,
@@ -3772,7 +3772,7 @@
     },
     {
       "fullName": "Johnnie Parker",
-      "position": "G",
+      "position": "SG",
       "height": 78,
       "height_str": "",
       "weight": 0,
@@ -3794,7 +3794,7 @@
     },
     {
       "fullName": "Josh Kroenke",
-      "position": "G",
+      "position": "SG",
       "height": 76,
       "height_str": "6-4",
       "weight": 199,
@@ -3842,7 +3842,7 @@
     },
     {
       "fullName": "Pat Schumacher",
-      "position": "G",
+      "position": "SG",
       "height": 75,
       "height_str": "",
       "weight": 0,
@@ -3864,7 +3864,7 @@
     },
     {
       "fullName": "Kenge Stevenson",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "",
       "weight": 0,
@@ -3886,7 +3886,7 @@
     },
     {
       "fullName": "Mark Wampler",
-      "position": "G",
+      "position": "SG",
       "height": 77,
       "height_str": "",
       "weight": 0,
@@ -3907,7 +3907,7 @@
     },
     {
       "fullName": "Steve Weaver",
-      "position": "G",
+      "position": "PG",
       "height": 72,
       "height_str": "",
       "weight": 0,

@@ -7,6 +7,7 @@ import '../providers/game_provider.dart';
 import '../widgets/feedback_grid.dart';
 import '../widgets/guess_counter.dart';
 import '../widgets/player_autocomplete_field.dart';
+import 'player_list_screen.dart';
 
 class GameScreen extends ConsumerStatefulWidget {
   const GameScreen({super.key, required this.sport, required this.difficulty});
@@ -43,6 +44,18 @@ class _GameScreenState extends ConsumerState<GameScreen> {
                 widget.difficulty.name.substring(1)),
           ],
         ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const PlayerListScreen()),
+            ),
+            child: const Text(
+              'Need help?',
+              style: TextStyle(color: Colors.white54, fontSize: 12),
+            ),
+          ),
+        ],
       ),
       body: _buildBody(gameState),
     );

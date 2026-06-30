@@ -3,7 +3,7 @@
     {
       "fullName": "Jayden Stone",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 17,
       "height": 76,
       "startYear": 2025,
@@ -33,7 +33,7 @@
     {
       "fullName": "Sebastian Mack",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 12,
       "height": 75,
       "startYear": 2025,
@@ -123,7 +123,7 @@
     {
       "fullName": "Tony Perkins",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 12,
       "height": 76,
       "startYear": 2024,
@@ -138,7 +138,7 @@
     {
       "fullName": "Marques Warrick",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 1,
       "height": 74,
       "startYear": 2024,
@@ -153,7 +153,7 @@
     {
       "fullName": "Jacob Crews",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 35,
       "height": 79,
       "startYear": 2024,
@@ -183,7 +183,7 @@
     {
       "fullName": "Marcus Allen",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 4,
       "height": 79,
       "startYear": 2024,
@@ -198,7 +198,7 @@
     {
       "fullName": "T.O. Barrett",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 5,
       "height": 76,
       "startYear": 2024,
@@ -213,7 +213,7 @@
     {
       "fullName": "Annor Boateng",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 6,
       "height": 78,
       "startYear": 2024,
@@ -243,7 +243,7 @@
     {
       "fullName": "Jeremy Sanchez",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 10,
       "height": 72,
       "startYear": 2024,
@@ -258,7 +258,7 @@
     {
       "fullName": "Tamar Bates",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 2,
       "height": 77,
       "startYear": 2023,
@@ -273,7 +273,7 @@
     {
       "fullName": "Anthony Robinson",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 14,
       "height": 74,
       "startYear": 2023,
@@ -303,7 +303,7 @@
     {
       "fullName": "Caleb Grill",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 31,
       "height": 75,
       "startYear": 2023,
@@ -348,7 +348,7 @@
     {
       "fullName": "Curt Lewis",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 4,
       "height": 77,
       "startYear": 2023,
@@ -378,7 +378,7 @@
     {
       "fullName": "John Tonje",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 5,
       "height": 77,
       "startYear": 2023,
@@ -393,7 +393,7 @@
     {
       "fullName": "D'Moi Hodge",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 5,
       "height": 76,
       "startYear": 2022,
@@ -408,7 +408,7 @@
     {
       "fullName": "DeAndre Gholston",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 4,
       "height": 77,
       "startYear": 2022,
@@ -438,7 +438,7 @@
     {
       "fullName": "Nick Honor",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 10,
       "height": 70,
       "startYear": 2022,
@@ -453,7 +453,7 @@
     {
       "fullName": "Sean East",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 55,
       "height": 75,
       "startYear": 2022,
@@ -483,7 +483,7 @@
     {
       "fullName": "Tre Gomillion",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 2,
       "height": 76,
       "startYear": 2022,
@@ -528,7 +528,7 @@
     {
       "fullName": "Ben Sternberg",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 31,
       "height": 72,
       "startYear": 2022,
@@ -558,7 +558,7 @@
     {
       "fullName": "Amari Davis",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 1,
       "height": 75,
       "startYear": 2021,
@@ -588,7 +588,7 @@
     {
       "fullName": "Jarron Coleman",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 5,
       "height": 77,
       "startYear": 2021,
@@ -603,7 +603,7 @@
     {
       "fullName": "Dajuan Gordon",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 12,
       "height": 76,
       "startYear": 2021,
@@ -648,7 +648,7 @@
     {
       "fullName": "Anton Brookshire",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 0,
       "height": 73,
       "startYear": 2021,
@@ -678,7 +678,7 @@
     {
       "fullName": "Kaleb Brown",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 1,
       "height": 78,
       "startYear": 2021,
@@ -693,7 +693,7 @@
     {
       "fullName": "Drew Buggs",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 11,
       "height": 75,
       "startYear": 2020,
@@ -723,7 +723,7 @@
     {
       "fullName": "Dru Smith",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 12,
       "height": 75,
       "startYear": 2019,
@@ -798,7 +798,7 @@
     {
       "fullName": "Javon Pickett",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 4,
       "height": 77,
       "startYear": 2018,
@@ -813,7 +813,7 @@
     {
       "fullName": "Torrence Watson",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 5,
       "height": 77,
       "startYear": 2018,
@@ -828,7 +828,7 @@
     {
       "fullName": "Mark Smith",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 13,
       "height": 77,
       "startYear": 2018,
@@ -843,7 +843,7 @@
     {
       "fullName": "Xavier Pinson",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 1,
       "height": 74,
       "startYear": 2018,
@@ -858,7 +858,7 @@
     {
       "fullName": "Ronnie Suggs",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 3,
       "height": 78,
       "startYear": 2018,
@@ -888,7 +888,7 @@
     {
       "fullName": "Brooks Ford",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 25,
       "height": 72,
       "startYear": 2018,
@@ -903,7 +903,7 @@
     {
       "fullName": "Evan Yerkes",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 10,
       "height": 75,
       "startYear": 2018,
@@ -918,7 +918,7 @@
     {
       "fullName": "Kassius Robertson",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 3,
       "height": 75,
       "startYear": 2017,
@@ -963,7 +963,7 @@
     {
       "fullName": "Blake Harris",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 55,
       "height": 75,
       "startYear": 2017,
@@ -1008,7 +1008,7 @@
     {
       "fullName": "Frankie Hughes",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 3,
       "height": 76,
       "startYear": 2016,
@@ -1023,7 +1023,7 @@
     {
       "fullName": "Jordan Geist",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 15,
       "height": 74,
       "startYear": 2016,
@@ -1083,7 +1083,7 @@
     {
       "fullName": "Trevor Glassman",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 13,
       "height": 75,
       "startYear": 2016,
@@ -1128,7 +1128,7 @@
     {
       "fullName": "Terrence Phillips",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 1,
       "height": 71,
       "startYear": 2015,
@@ -1143,7 +1143,7 @@
     {
       "fullName": "K.J. Walton",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 11,
       "height": 75,
       "startYear": 2015,
@@ -1158,7 +1158,7 @@
     {
       "fullName": "Cullen VanLeer",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 33,
       "height": 76,
       "startYear": 2015,
@@ -1203,7 +1203,7 @@
     {
       "fullName": "Jimmy Barton",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 11,
       "height": 69,
       "startYear": 2015,
@@ -1218,7 +1218,7 @@
     {
       "fullName": "Keith Shamburger",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 14,
       "height": 71,
       "startYear": 2014,
@@ -1233,7 +1233,7 @@
     {
       "fullName": "Montaque Gill-Caesar",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 13,
       "height": 78,
       "startYear": 2014,
@@ -1248,7 +1248,7 @@
     {
       "fullName": "Namon Wright",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 12,
       "height": 77,
       "startYear": 2014,
@@ -1278,7 +1278,7 @@
     {
       "fullName": "Tramaine Isabell",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 4,
       "height": 73,
       "startYear": 2014,
@@ -1308,7 +1308,7 @@
     {
       "fullName": "Deuce Bello",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 2,
       "height": 76,
       "startYear": 2014,
@@ -1323,7 +1323,7 @@
     {
       "fullName": "Jordan Clarkson",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 5,
       "height": 77,
       "startYear": 2013,
@@ -1383,7 +1383,7 @@
     {
       "fullName": "Shane Rector",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 11,
       "height": 73,
       "startYear": 2013,
@@ -1413,7 +1413,7 @@
     {
       "fullName": "Earnest Ross",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 33,
       "height": 77,
       "startYear": 2012,
@@ -1428,7 +1428,7 @@
     {
       "fullName": "Keion Bell",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 5,
       "height": 76,
       "startYear": 2012,
@@ -1443,7 +1443,7 @@
     {
       "fullName": "Jabari Brown",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 32,
       "height": 77,
       "startYear": 2012,
@@ -1473,7 +1473,7 @@
     {
       "fullName": "Negus Webster-Chan",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 14,
       "height": 79,
       "startYear": 2012,
@@ -1533,7 +1533,7 @@
     {
       "fullName": "Corey Haith",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 4,
       "height": 71,
       "startYear": 2012,
@@ -1548,7 +1548,7 @@
     {
       "fullName": "Dominique Bull",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 10,
       "height": 76,
       "startYear": 2012,
@@ -1623,7 +1623,7 @@
     {
       "fullName": "Phil Pressey",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 1,
       "height": 71,
       "startYear": 2010,
@@ -1638,7 +1638,7 @@
     {
       "fullName": "Matt Pressey",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 3,
       "height": 74,
       "startYear": 2010,
@@ -1653,7 +1653,7 @@
     {
       "fullName": "Michael Dixon",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 11,
       "height": 73,
       "startYear": 2009,
@@ -1698,7 +1698,7 @@
     {
       "fullName": "Zaire Taylor",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 11,
       "height": 76,
       "startYear": 2008,
@@ -1713,7 +1713,7 @@
     {
       "fullName": "Kim English",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 24,
       "height": 78,
       "startYear": 2008,
@@ -1728,7 +1728,7 @@
     {
       "fullName": "Marcus Denmon",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 12,
       "height": 75,
       "startYear": 2008,
@@ -1758,7 +1758,7 @@
     {
       "fullName": "Miguel Paul",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 0,
       "height": 73,
       "startYear": 2008,
@@ -1788,7 +1788,7 @@
     {
       "fullName": "Jarrett Sutton",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 25,
       "height": 76,
       "startYear": 2008,
@@ -1848,7 +1848,7 @@
     {
       "fullName": "Stefhon Hannah",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 3,
       "height": 73,
       "startYear": 2006,
@@ -1863,7 +1863,7 @@
     {
       "fullName": "Keon Lawrence",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 2,
       "height": 74,
       "startYear": 2006,
@@ -1893,7 +1893,7 @@
     {
       "fullName": "J.T. Tiller",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 4,
       "height": 75,
       "startYear": 2006,
@@ -1923,7 +1923,7 @@
     {
       "fullName": "Nick Berardini",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 10,
       "height": 72,
       "startYear": 2006,
@@ -1953,7 +1953,7 @@
     {
       "fullName": "Marcus Watkins",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 23,
       "height": 76,
       "startYear": 2005,
@@ -1968,7 +1968,7 @@
     {
       "fullName": "Matt Lawrence",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 33,
       "height": 79,
       "startYear": 2005,
@@ -1983,7 +1983,7 @@
     {
       "fullName": "James Douglas",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 2,
       "height": 75,
       "startYear": 2005,
@@ -1998,7 +1998,7 @@
     {
       "fullName": "Jason Horton",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 12,
       "height": 73,
       "startYear": 2004,
@@ -2058,7 +2058,7 @@
     {
       "fullName": "Jason Conley",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 2,
       "height": 77,
       "startYear": 2003,
@@ -2088,7 +2088,7 @@
     {
       "fullName": "Thomas Gardner",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 3,
       "height": 77,
       "startYear": 2003,
@@ -2103,7 +2103,7 @@
     {
       "fullName": "Randy Pulley",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 21,
       "height": 74,
       "startYear": 2003,
@@ -2118,7 +2118,7 @@
     {
       "fullName": "Spencer Laurie",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 10,
       "height": 73,
       "startYear": 2003,
@@ -2133,7 +2133,7 @@
     {
       "fullName": "Brian Dailey",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 24,
       "height": 75,
       "startYear": 2003,
@@ -2148,7 +2148,7 @@
     {
       "fullName": "Ricky Clemons",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 0,
       "height": 71,
       "startYear": 2002,
@@ -2163,7 +2163,7 @@
     {
       "fullName": "Jimmy McKinney",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 1,
       "height": 75,
       "startYear": 2002,
@@ -2193,7 +2193,7 @@
     {
       "fullName": "Rob Stewart",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 2,
       "height": 76,
       "startYear": 2002,
@@ -2238,7 +2238,7 @@
     {
       "fullName": "Duane John",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 1,
       "height": 78,
       "startYear": 2001,
@@ -2253,7 +2253,7 @@
     {
       "fullName": "Jake Jackson",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 24,
       "height": 74,
       "startYear": 2001,
@@ -2298,7 +2298,7 @@
     {
       "fullName": "Wesley Stokes",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 2,
       "height": 72,
       "startYear": 2000,
@@ -2328,7 +2328,7 @@
     {
       "fullName": "Ryan Kiernan",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 10,
       "height": 72,
       "startYear": 2000,
@@ -2343,7 +2343,7 @@
     {
       "fullName": "Keyon Dooling",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 0,
       "height": 75,
       "startYear": 1999,
@@ -2358,7 +2358,7 @@
     {
       "fullName": "Clarence Gilbert",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 4,
       "height": 74,
       "startYear": 1999,
@@ -2388,7 +2388,7 @@
     {
       "fullName": "Tajudeen Soyoye",
       "sport": "basketball",
-      "position": "G",
+      "position": "F",
       "jerseyNumber": 0,
       "height": 81,
       "startYear": 1999,
@@ -2403,7 +2403,7 @@
     {
       "fullName": "Brian Grawer",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 0,
       "height": 72,
       "startYear": 1999,
@@ -2418,7 +2418,7 @@
     {
       "fullName": "Jeff Hafer",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 0,
       "height": 77,
       "startYear": 1999,
@@ -2433,7 +2433,7 @@
     {
       "fullName": "Johnnie Parker",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 0,
       "height": 78,
       "startYear": 1999,
@@ -2448,7 +2448,7 @@
     {
       "fullName": "Josh Kroenke",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 15,
       "height": 76,
       "startYear": 1999,
@@ -2478,7 +2478,7 @@
     {
       "fullName": "Pat Schumacher",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 0,
       "height": 75,
       "startYear": 1999,
@@ -2493,7 +2493,7 @@
     {
       "fullName": "Kenge Stevenson",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 0,
       "height": 77,
       "startYear": 1999,
@@ -2508,7 +2508,7 @@
     {
       "fullName": "Mark Wampler",
       "sport": "basketball",
-      "position": "G",
+      "position": "SG",
       "jerseyNumber": 0,
       "height": 77,
       "startYear": 1999,
@@ -2523,7 +2523,7 @@
     {
       "fullName": "Steve Weaver",
       "sport": "basketball",
-      "position": "G",
+      "position": "PG",
       "jerseyNumber": 0,
       "height": 72,
       "startYear": 1999,
