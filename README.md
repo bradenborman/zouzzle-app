@@ -1,16 +1,19 @@
-# zouzzle
+# Zouzzle
 
-A new Flutter project.
+Guess the Mizzou basketball player. A daily sports trivia game built with Flutter.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- 169 real University of Missouri basketball players (2000–2026)
+- Multiple difficulty levels (Easy, Medium, Hard, Open, Recent)
+- Per-game stat comparisons with directional hints
+- Position, height, years, and random stat columns
+- Play as many times as you want
 
-A few resources to get you started if this is your first Flutter project:
+## Privacy
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Zouzzle collects no data. See [Privacy Policy](https://bradenborman.github.io/zouzzle-app/).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Support
+
+Contact: bradenborman@gmail.com
