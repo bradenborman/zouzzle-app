@@ -18,13 +18,14 @@ import '../providers/game_provider.dart';
 /// When restored from [CompletionState] on same-day re-open, the same
 /// display is reconstructed from persisted data (Requirement 8.2).
 class ResultScreen extends ConsumerWidget {
-  const ResultScreen({super.key, required this.sport});
+  const ResultScreen({super.key, required this.sport, required this.difficulty});
 
   final Sport sport;
+  final Difficulty difficulty;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final gameState = ref.watch(gameProvider(sport));
+    final gameState = ref.watch(gameProvider(GameKey(sport, difficulty)));
 
     // If the game is not in a terminal state (won/lost), the user likely
     // navigated here directly. Redirect back to the game screen.

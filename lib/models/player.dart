@@ -21,11 +21,11 @@ class Player {
   @JsonKey(toJson: _tierToJson, fromJson: _tierFromJson)
   final StatisticalTier statisticalTier;
 
-  // Career stats
-  final int points;
-  final int rebounds;
-  final int assists;
-  final int steals;
+  // Career stats (per-game averages at Missouri)
+  final double points;
+  final double rebounds;
+  final double assists;
+  final double steals;
 
   const Player({
     required this.fullName,
@@ -37,10 +37,10 @@ class Player {
     required this.endYear,
     required this.wentPro,
     required this.statisticalTier,
-    this.points = 0,
-    this.rebounds = 0,
-    this.assists = 0,
-    this.steals = 0,
+    this.points = 0.0,
+    this.rebounds = 0.0,
+    this.assists = 0.0,
+    this.steals = 0.0,
   });
 
   factory Player.fromJson(Map<String, dynamic> json) => _$PlayerFromJson(json);

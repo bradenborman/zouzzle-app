@@ -8,14 +8,11 @@ import '../widgets/feedback_grid.dart';
 import '../widgets/guess_counter.dart';
 import '../widgets/player_autocomplete_field.dart';
 
-/// The main gameplay screen where users submit guesses and receive feedback.
-///
-/// Watches [gameProvider] for the current [GameState] and renders the
-/// appropriate UI based on status (loading, error, active, won, lost).
 class GameScreen extends ConsumerStatefulWidget {
-  const GameScreen({super.key, required this.sport});
+  const GameScreen({super.key, required this.sport, required this.difficulty});
 
   final Sport sport;
+  final Difficulty difficulty;
 
   @override
   ConsumerState<GameScreen> createState() => _GameScreenState();
@@ -24,28 +21,11 @@ class GameScreen extends ConsumerStatefulWidget {
 class _GameScreenState extends ConsumerState<GameScreen> {
   final _autocompleteKey = GlobalKey<PlayerAutocompleteFieldState>();
 
-  @override
-  void initState() {
-    super.initState();
-  }
+  GameKey get _gameKey => GameKey(widget.sport, widget.difficulty);
 
   @override
   Widget build(BuildContext context) {
-    final gameState = ref.watch(gameProvider(widget.sport));
-
-    // Listen for terminal status transitions to navigate to the result screen.
-    ref.listen(gameProvider(widget.sport), (previous, next) {
-      if (next.status == GameStatus.won || next.status == GameStatus.lost) {
-        if (previous?.status == GameStatus.active) {
-          // Brief delay so user sees their final guess feedback
-          Future.delayed(const Duration(milliseconds: 800), () {
-            if (context.mounted) {
-              context.go('/result/${widget.sport.name}');
-            }
-          });
-        }
-      }
-    });
+    final gameState = ref.watch(gameProvider(_gameKey));
 
     return Scaffold(
       resizeToAvoidBottomInset: true,
@@ -59,8 +39,8 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           children: [
             Image.asset('assets/images/tiger-piece.png', height: 28),
             const SizedBox(width: 8),
-            Text(widget.sport.name[0].toUpperCase() +
-                widget.sport.name.substring(1)),
+            Text(widget.difficulty.name[0].toUpperCase() +
+                widget.difficulty.name.substring(1)),
           ],
         ),
       ),
@@ -79,9 +59,8 @@ class _GameScreenState extends ConsumerState<GameScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Something went wrong loading the game.',
+              'Something went wrong.',
               style: TextStyle(color: Colors.white),
-              textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
             ElevatedButton(
@@ -96,7 +75,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     final bool gameOver =
         gameState.status == GameStatus.won || gameState.status == GameStatus.lost;
 
-    return SingleChildScrollView(
+    return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         children: [
@@ -109,7 +88,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
                   child: PlayerAutocompleteField(
                     key: _autocompleteKey,
                     onSearch: (query) => ref
-                        .read(gameProvider(widget.sport).notifier)
+                        .read(gameProvider(_gameKey).notifier)
                         .autocompleteFor(query),
                     onSubmit: (_) => _handleSubmit(),
                   ),
@@ -142,7 +121,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
             Text(
               gameState.status == GameStatus.won
                   ? 'You got it!'
-                  : 'Better luck tomorrow!',
+                  : 'Better luck next time!',
               style: const TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -158,9 +137,20 @@ class _GameScreenState extends ConsumerState<GameScreen> {
                 fontWeight: FontWeight.w600,
               ),
             ),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: () {
+                ref.invalidate(gameProvider(_gameKey));
+              },
+              child: const Text('Play Again'),
+            ),
             const SizedBox(height: 16),
           ],
-          FeedbackGrid(feedbackRows: gameState.guesses),
+          Expanded(
+            child: SingleChildScrollView(
+              child: FeedbackGrid(feedbackRows: gameState.guesses),
+            ),
+          ),
         ],
       ),
     );
@@ -171,7 +161,7 @@ class _GameScreenState extends ConsumerState<GameScreen> {
     if (text.isEmpty) return;
 
     final success = await ref
-        .read(gameProvider(widget.sport).notifier)
+        .read(gameProvider(_gameKey).notifier)
         .submitGuess(text);
 
     if (success) {

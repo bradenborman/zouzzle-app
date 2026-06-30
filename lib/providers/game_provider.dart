@@ -1,30 +1,46 @@
+import 'dart:math';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../data/completion_repository.dart';
 import '../data/player_repository.dart';
 import '../logic/comparison_engine.dart';
-import '../logic/daily_seed_service.dart';
-import '../models/completion_state.dart';
 import '../models/enums.dart';
-import '../models/feedback_row.dart';
 import '../models/game_state.dart';
-import 'completion_repository_provider.dart';
+import '../models/player.dart';
 import 'player_repository_provider.dart';
 
-class GameNotifier extends StateNotifier<GameState> {
-  final CompletionRepository _completionRepo;
-  final Sport _sport;
+/// Difficulty levels that filter the player pool.
+enum Difficulty { easy, medium, hard, open, recent }
 
-  /// The loaded repository — set once data is available during [_init].
-  /// Used by [submitGuess] and [autocompleteFor].
+/// Filter players based on difficulty.
+/// All modes exclude players who never really played (< 2 ppg AND < 1 rpg).
+List<Player> filterByDifficulty(List<Player> players, Difficulty difficulty) {
+  final currentYear = DateTime.now().year;
+  return players.where((p) {
+    switch (difficulty) {
+      case Difficulty.easy:
+        return p.points >= 10 || p.rebounds >= 7 || p.assists >= 5;
+      case Difficulty.medium:
+        return p.points >= 6 || p.rebounds >= 4;
+      case Difficulty.hard:
+      case Difficulty.open:
+        return p.points >= 2 || p.rebounds >= 1;
+      case Difficulty.recent:
+        return (p.endYear >= currentYear - 5) && (p.points >= 2 || p.rebounds >= 1);
+    }
+  }).toList();
+}
+
+class GameNotifier extends StateNotifier<GameState> {
+  final Difficulty _difficulty;
   PlayerRepository? _repo;
+  List<Player> _eligiblePlayers = [];
 
   GameNotifier(
     AsyncValue<PlayerRepository> repoAsync,
-    CompletionRepository completionRepo,
     Sport sport,
-  )   : _completionRepo = completionRepo,
-        _sport = sport,
+    Difficulty difficulty,
+  )   : _difficulty = difficulty,
         super(GameState(
           sport: sport,
           guesses: const [],
@@ -35,153 +51,67 @@ class GameNotifier extends StateNotifier<GameState> {
     _init(repoAsync);
   }
 
-  // ---------------------------------------------------------------------------
-  // Initialization
-  // ---------------------------------------------------------------------------
-
-  Future<void> _init(AsyncValue<PlayerRepository> repoAsync) async {
+  void _init(AsyncValue<PlayerRepository> repoAsync) {
     repoAsync.when(
-      loading: () {
-        // Stay in loading state — Riverpod will rebuild the provider when the
-        // FutureProvider resolves and pass the new AsyncValue.
-      },
+      loading: () {},
       error: (_, __) {
         state = state.copyWith(status: GameStatus.error);
       },
-      data: (repo) async {
+      data: (repo) {
         _repo = repo;
+        _eligiblePlayers = filterByDifficulty(repo.players, _difficulty);
 
-        if (repo.players.isEmpty) {
+        if (_eligiblePlayers.isEmpty) {
           state = state.copyWith(
             status: GameStatus.error,
-            validationMessage: 'No valid players found',
+            validationMessage: 'No players found for this difficulty',
           );
           return;
         }
 
-        final today = DateTime.now();
-        final todayDate = DateTime(today.year, today.month, today.day);
+        // Pick a random mystery player
+        final random = Random();
+        final mystery = _eligiblePlayers[random.nextInt(_eligiblePlayers.length)];
 
-        // Check whether the user already completed today's puzzle.
-        final completion =
-            await _completionRepo.loadForDate(_sport, todayDate);
-
-        if (completion != null) {
-          _restoreFromCompletion(repo, completion);
-        } else {
-          final mystery =
-              selectMysteryPlayer(repo.players, todayDate, _sport);
-          state = state.copyWith(
-            mysteryPlayer: mystery,
-            status: GameStatus.active,
-          );
-        }
+        state = state.copyWith(
+          mysteryPlayer: mystery,
+          status: GameStatus.active,
+        );
       },
     );
   }
 
-  // ---------------------------------------------------------------------------
-  // Restore from persisted CompletionState (Requirement 8.2)
-  // ---------------------------------------------------------------------------
-
-  void _restoreFromCompletion(
-      PlayerRepository repo, CompletionState completion) {
-    final mystery = repo.findByName(completion.mysteryPlayerName);
-
-    if (mystery == null) {
-      // Mystery player no longer exists in dataset (data changed).
-      // Fall back to a fresh game so the app doesn't get stuck.
-      final today = DateTime.now();
-      final todayDate = DateTime(today.year, today.month, today.day);
-      final newMystery =
-          selectMysteryPlayer(repo.players, todayDate, _sport);
-      state = state.copyWith(
-        mysteryPlayer: newMystery,
-        status: GameStatus.active,
-      );
-      return;
-    }
-
-    // Reconstruct FeedbackRows from persisted guess names.
-    final reconstructedGuesses = <FeedbackRow>[];
-    for (final guessName in completion.guesses) {
-      final guessedPlayer = repo.findByName(guessName);
-      // Skip gracefully if a previously guessed player is no longer in dataset.
-      if (guessedPlayer == null) continue;
-      reconstructedGuesses.add(evaluateGuess(guessedPlayer, mystery));
-    }
-
-    final status =
-        completion.outcome == 'win' ? GameStatus.won : GameStatus.lost;
-    final remaining =
-        (6 - reconstructedGuesses.length).clamp(0, 6);
-
-    state = state.copyWith(
-      mysteryPlayer: mystery,
-      guesses: reconstructedGuesses,
-      remainingGuesses: remaining,
-      status: status,
-    );
-  }
-
-  // ---------------------------------------------------------------------------
-  // Public API
-  // ---------------------------------------------------------------------------
-
   /// Submit a player name as a guess.
-  ///
-  /// Returns `false` when the guess is invalid (not in dataset, duplicate, or
-  /// game already over). Returns `true` on a successfully recorded guess.
-  ///
-  /// Requirements: 4.5, 4.6, 4.7, 4.8, 6.1, 6.4, 6.5, 6.6, 7.1, 8.1
   Future<bool> submitGuess(String playerName) async {
-    // Guard: game must be active.
-    if (state.status != GameStatus.active) {
-      return false;
-    }
-
-    // Guard: remaining guesses must be > 0 (Requirement 6.6).
-    if (state.remainingGuesses <= 0) {
-      return false;
-    }
+    if (state.status != GameStatus.active) return false;
+    if (state.remainingGuesses <= 0) return false;
 
     final repo = _repo;
-    if (repo == null) {
-      return false;
-    }
+    if (repo == null) return false;
 
-    // Validate: name must exist in the current sport's dataset (Req 4.5, 4.6).
     final guessedPlayer = repo.findByName(playerName);
     if (guessedPlayer == null) {
-      state = state.copyWith(
-        validationMessage: 'Player not found in dataset',
-      );
+      state = state.copyWith(validationMessage: 'Player not found');
       return false;
     }
 
-    // Validate: no duplicate guesses (Req 4.7, 4.8).
     final alreadyGuessed =
         state.guesses.any((row) => row.guessedPlayer.fullName == playerName);
     if (alreadyGuessed) {
-      state = state.copyWith(
-        validationMessage: 'You already guessed that player',
-      );
+      state = state.copyWith(validationMessage: 'Already guessed');
       return false;
     }
 
     final mystery = state.mysteryPlayer!;
-
-    // Evaluate the guess and build the FeedbackRow.
     final feedbackRow = evaluateGuess(guessedPlayer, mystery);
     final updatedGuesses = [...state.guesses, feedbackRow];
     final updatedRemaining = state.remainingGuesses - 1;
 
-    // Determine new game status.
     final GameStatus newStatus;
     if (guessedPlayer.fullName == mystery.fullName) {
-      newStatus = GameStatus.won; // Requirement 7.1
+      newStatus = GameStatus.won;
     } else if (updatedRemaining <= 0) {
-      newStatus = GameStatus.lost; // Requirement 6.5
+      newStatus = GameStatus.lost;
     } else {
       newStatus = GameStatus.active;
     }
@@ -193,29 +123,10 @@ class GameNotifier extends StateNotifier<GameState> {
       validationMessage: null,
     );
 
-    // Persist on terminal state (Requirement 8.1).
-    if (newStatus == GameStatus.won || newStatus == GameStatus.lost) {
-      final today = DateTime.now();
-      final todayDate = DateTime(today.year, today.month, today.day);
-      final completionState = CompletionState(
-        sport: _sport.toJson(),
-        date: todayDate.toIso8601String().substring(0, 10),
-        outcome: newStatus == GameStatus.won ? 'win' : 'lose',
-        mysteryPlayerName: mystery.fullName,
-        guesses: updatedGuesses
-            .map((row) => row.guessedPlayer.fullName)
-            .toList(),
-      );
-      await _completionRepo.save(completionState);
-    }
-
     return true;
   }
 
-  /// Returns autocomplete suggestions for [input].
-  ///
-  /// Delegates to [PlayerRepository.namesContaining]; returns an empty list
-  /// when [input] is empty (Requirement 4.2).
+  /// Autocomplete suggestions from the full player list (not just eligible).
   List<String> autocompleteFor(String input) {
     if (input.isEmpty) return [];
     return _repo?.namesContaining(input) ?? [];
@@ -223,16 +134,28 @@ class GameNotifier extends StateNotifier<GameState> {
 }
 
 // -----------------------------------------------------------------------------
-// Provider
+// Provider — keyed by (Sport, Difficulty) pair
 // -----------------------------------------------------------------------------
 
+/// Unique key for the game provider combining sport and difficulty.
+class GameKey {
+  final Sport sport;
+  final Difficulty difficulty;
+
+  const GameKey(this.sport, this.difficulty);
+
+  @override
+  bool operator ==(Object other) =>
+      other is GameKey && sport == other.sport && difficulty == other.difficulty;
+
+  @override
+  int get hashCode => Object.hash(sport, difficulty);
+}
+
 final gameProvider =
-    StateNotifierProvider.family<GameNotifier, GameState, Sport>(
-  (ref, sport) {
-    // Keep the provider alive so navigating back doesn't reset mid-game state.
-    ref.keepAlive();
-    final repoAsync = ref.watch(playerRepositoryProvider(sport));
-    final completionRepo = ref.watch(completionRepositoryProvider);
-    return GameNotifier(repoAsync, completionRepo, sport);
+    StateNotifierProvider.family<GameNotifier, GameState, GameKey>(
+  (ref, key) {
+    final repoAsync = ref.watch(playerRepositoryProvider(key.sport));
+    return GameNotifier(repoAsync, key.sport, key.difficulty);
   },
 );

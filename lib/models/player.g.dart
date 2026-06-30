@@ -16,10 +16,10 @@ Player _$PlayerFromJson(Map<String, dynamic> json) => Player(
   endYear: (json['endYear'] as num).toInt(),
   wentPro: json['wentPro'] as bool,
   statisticalTier: _tierFromJson(json['statisticalTier'] as String),
-  points: (json['points'] as num?)?.toInt() ?? 0,
-  rebounds: (json['rebounds'] as num?)?.toInt() ?? 0,
-  assists: (json['assists'] as num?)?.toInt() ?? 0,
-  steals: (json['steals'] as num?)?.toInt() ?? 0,
+  points: (json['points'] as num?)?.toDouble() ?? 0.0,
+  rebounds: (json['rebounds'] as num?)?.toDouble() ?? 0.0,
+  assists: (json['assists'] as num?)?.toDouble() ?? 0.0,
+  steals: (json['steals'] as num?)?.toDouble() ?? 0.0,
 );
 
 Map<String, dynamic> _$PlayerToJson(Player instance) => <String, dynamic>{

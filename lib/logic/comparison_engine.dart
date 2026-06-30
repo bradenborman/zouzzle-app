@@ -42,7 +42,7 @@ String statCategoryLabel(StatCategory cat) {
 }
 
 /// Gets the stat value from a player for a given category.
-int _getStatValue(Player player, StatCategory cat) {
+double _getStatValue(Player player, StatCategory cat) {
   switch (cat) {
     case StatCategory.points:
       return player.points;
@@ -87,6 +87,18 @@ FeedbackRow evaluateGuess(Player guessed, Player mystery) {
   final teammatesState = wereTeammates ? MatchState.exact : MatchState.miss;
   final yearsDisplay = "'${(guessed.startYear % 100).toString().padLeft(2, '0')}-'${(guessed.endYear % 100).toString().padLeft(2, '0')}";
 
+  // Arrow for years: if no overlap, point toward the mystery player's era
+  final ArrowDirection? yearsArrow;
+  if (wereTeammates) {
+    yearsArrow = null;
+  } else if (mystery.startYear > guessed.endYear) {
+    // Mystery player is more recent
+    yearsArrow = ArrowDirection.up;
+  } else {
+    // Mystery player is older
+    yearsArrow = ArrowDirection.down;
+  }
+
   // 4. Random stat — picks a random category each guess
   final statCat = StatCategory.values[DateTime.now().microsecond % StatCategory.values.length];
   final guessedStat = _getStatValue(guessed, statCat);
@@ -120,6 +132,7 @@ FeedbackRow evaluateGuess(Player guessed, Player mystery) {
       AttributeResult(
         attributeLabel: 'Years',
         state: teammatesState,
+        arrow: yearsArrow,
         displayValue: yearsDisplay,
       ),
       AttributeResult(
