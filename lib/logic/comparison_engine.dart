@@ -135,9 +135,17 @@ FeedbackRow evaluateGuess(Player guessed, Player mystery, {Difficulty? difficult
   ];
 
   if (difficulty == Difficulty.recent) {
-    // Recent mode: two stat columns instead of years
-    results.add(_buildStatResult(guessed, mystery));
-    results.add(_buildStatResult(guessed, mystery));
+    // Recent mode: two stat columns instead of years (guaranteed different)
+    final stat1 = _buildStatResult(guessed, mystery);
+    // Pick second stat ensuring it's a different category
+    AttributeResult stat2 = _buildStatResult(guessed, mystery);
+    int attempts = 0;
+    while (stat2.displayValue!.substring(0, 3) == stat1.displayValue!.substring(0, 3) && attempts < 10) {
+      stat2 = _buildStatResult(guessed, mystery);
+      attempts++;
+    }
+    results.add(stat1);
+    results.add(stat2);
   } else {
     // All other modes: years + one stat
     // 3. Years — did their years overlap?
