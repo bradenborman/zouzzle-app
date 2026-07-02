@@ -1,12 +1,12 @@
 """
-Scrape Mizzou football rosters from sports-reference.com.
+Scrape Mizzou football rosters from mutigers.com.
 Dumps each season's roster into data/football_rosters/ as individual JSON files.
 Then combines into a single deduplicated player database.
 
 Usage:
     python3 scripts/scrape_football_rosters.py
 
-Note: sports-reference rate-limits. This script adds 10s delays between requests.
+Note: 10s delays between requests to be respectful.
 """
 
 import json
@@ -15,7 +15,7 @@ import requests
 from bs4 import BeautifulSoup
 from pathlib import Path
 
-BASE_URL = "https://www.sports-reference.com/cfb/schools/missouri"
+BASE_URL = "https://mutigers.com/sports/football/roster"
 OUTPUT_DIR = Path(__file__).parent.parent / "data" / "football_rosters"
 COMBINED_OUTPUT = Path(__file__).parent.parent / "data" / "football_player_database.json"
 
@@ -31,91 +31,81 @@ HEADERS = {
 
 
 def parse_height(height_str):
-    """Convert height string like '6-4' to total inches."""
+    """Convert height string like 6' 2'' to total inches."""
     if not height_str:
         return 0
-    parts = height_str.strip().replace("'", "-").replace('"', '').split('-')
-    if len(parts) == 2:
-        try:
-            return int(parts[0]) * 12 + int(parts[1])
-        except ValueError:
-            return 0
+    import re
+    match = re.match(r"(\d+)'\s*(\d+)", height_str)
+    if match:
+        return int(match.group(1)) * 12 + int(match.group(2))
     return 0
 
 
 def scrape_roster(year):
-    """Scrape a single season's football roster page."""
-    url = f"{BASE_URL}/{year}-roster.html"
+    """Scrape a single season's football roster from mutigers.com."""
+    url = f"{BASE_URL}/{year}"
     print(f"  {year} ... ", end="", flush=True)
 
     try:
-        resp = requests.get(url, headers=HEADERS, timeout=10)
+        resp = requests.get(url, headers=HEADERS, timeout=15)
     except requests.RequestException as e:
         print(f"❌ {e}")
         return []
 
-    if resp.status_code == 429:
-        print("❌ rate limited")
-        return None  # Signal to stop
     if resp.status_code != 200:
         print(f"❌ HTTP {resp.status_code}")
         return []
 
     soup = BeautifulSoup(resp.text, "html.parser")
-    roster_table = soup.find("table", {"id": "roster"})
 
-    if not roster_table:
-        print("❌ no roster table")
+    # Find the first table with roster data
+    tables = soup.find_all("table", class_="w-full")
+    if not tables:
+        print("❌ no table found")
         return []
 
-    tbody = roster_table.find("tbody")
-    if not tbody:
-        print("❌ no tbody")
+    roster_table = tables[0]
+    rows = roster_table.find_all("tr")
+
+    if len(rows) < 2:
+        print("❌ no data rows")
         return []
+
+    # Parse header to get column indices
+    header_cells = [c.get_text(strip=True).lower() for c in rows[0].find_all(["th", "td"])]
 
     players = []
-    for row in tbody.find_all("tr"):
-        if row.get("class") and "thead" in row.get("class", []):
-            continue
-
+    for row in rows[1:]:
         cells = row.find_all(["th", "td"])
-        if len(cells) < 4:
+        if len(cells) < 6:
             continue
 
-        # Get data-stat values for reliable parsing
-        values = {}
-        for cell in cells:
-            stat = cell.get("data-stat", "")
-            values[stat] = cell.get_text(strip=True)
+        values = [c.get_text(strip=True) for c in cells]
 
-        name = values.get("player", "")
+        # Map based on typical column order: No, Name, Pos, Ht, Wt, Year, Hometown
+        try:
+            jersey_str = values[0] if len(values) > 0 else ""
+            name = values[1] if len(values) > 1 else ""
+            position = values[2] if len(values) > 2 else ""
+            height_str = values[3] if len(values) > 3 else ""
+            weight_str = values[4] if len(values) > 4 else ""
+            player_class = values[5] if len(values) > 5 else ""
+            hometown = values[6] if len(values) > 6 else ""
+        except IndexError:
+            continue
+
         if not name:
             continue
 
-        jersey = values.get("uniform_number", "")
-        position = values.get("pos", "")
-        height_str = values.get("height", "")
-        weight = values.get("weight", "")
-        player_class = values.get("class", "")
-        hometown = values.get("hometown", "")
-
         try:
-            jersey_num = int(jersey) if jersey else 0
+            jersey_num = int(jersey_str)
         except (ValueError, TypeError):
             jersey_num = 0
 
         try:
-            weight_num = int(weight) if weight else 0
+            weight_num = int(weight_str)
         except (ValueError, TypeError):
             weight_num = 0
-
-        # Get player URL if available
-        player_link = ""
-        for cell in cells:
-            link = cell.find("a")
-            if link and link.get("href", "").startswith("/cfb/players/"):
-                player_link = link["href"]
-                break
 
         players.append({
             "name": name,
@@ -126,7 +116,6 @@ def scrape_roster(year):
             "height_str": height_str,
             "weight": weight_num,
             "hometown": hometown,
-            "playerUrl": player_link,
             "season": year,
         })
 
@@ -135,22 +124,17 @@ def scrape_roster(year):
 
 
 def main():
-    print("🏈 Scraping Mizzou Football Rosters")
+    print("🏈 Scraping Mizzou Football Rosters (mutigers.com)")
     print(f"   Seasons: {START_YEAR}-{END_YEAR}")
     print(f"   Output: {OUTPUT_DIR}/")
     print()
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    all_players = {}  # name -> combined player data
+    all_players = {}
 
     for year in range(START_YEAR, END_YEAR + 1):
         players = scrape_roster(year)
-
-        if players is None:
-            # Rate limited — stop
-            print("\n⚠️  Rate limited. Run again later to continue.")
-            break
 
         # Save individual season file
         if players:
@@ -170,7 +154,6 @@ def main():
                     "weight": p["weight"],
                     "jerseyNumber": p["jersey"],
                     "hometown": p["hometown"],
-                    "playerUrl": p["playerUrl"],
                     "startYear": year,
                     "endYear": year,
                     "seasons": [year],
@@ -188,16 +171,13 @@ def main():
                     existing["weight"] = p["weight"]
                 if p["jersey"] > 0:
                     existing["jerseyNumber"] = p["jersey"]
-                if p["playerUrl"]:
-                    existing["playerUrl"] = p["playerUrl"]
 
-        time.sleep(10)  # Rate limit - be nice
+        time.sleep(10)
 
     # Sort by most recent first
     players_list = sorted(all_players.values(), key=lambda p: -p["startYear"])
 
     # Save combined database
-    COMBINED_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     with open(COMBINED_OUTPUT, "w") as f:
         json.dump({"players": players_list, "total": len(players_list)}, f, indent=2)
 
@@ -206,7 +186,7 @@ def main():
     print(f"💾 Individual rosters: {OUTPUT_DIR}/")
     print(f"💾 Combined database:  {COMBINED_OUTPUT}")
 
-    # Show position breakdown
+    # Position breakdown
     from collections import Counter
     positions = Counter(p["position"] for p in players_list)
     print(f"\n📊 Position breakdown:")
@@ -216,7 +196,7 @@ def main():
     print(f"\n🎯 Sample players:")
     for p in players_list[:10]:
         ht = p.get("height_str", "?")
-        print(f"   {p['fullName']:<25s} {p['position']:<5s} {ht:<5s} {p['startYear']}-{p['endYear']}")
+        print(f"   {p['fullName']:<25s} {p['position']:<5s} {ht:<8s} {p['startYear']}-{p['endYear']}")
 
 
 if __name__ == "__main__":
